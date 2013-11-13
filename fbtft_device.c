@@ -278,6 +278,18 @@ static struct fbtft_device_display displays[] = {
 			}
 		}
 	}, {
+		.name = "ssd1331b",
+		.spi = &(struct spi_board_info) {
+			.modalias = "fb_ssd1331b",
+			.max_speed_hz = 2000000,
+			.mode = SPI_MODE_3 | SPI_NO_CS,
+			.platform_data = &(struct fbtft_platform_data) {
+				.display = {
+					.buswidth = 8,
+				},
+			}
+		}
+	}, {
 		.name = "hy28a",
 		.spi = &(struct spi_board_info) {
 			.modalias = "fb_ili9320",
